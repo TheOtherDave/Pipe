@@ -13,3 +13,10 @@ public func | <T, U> (lhs: T?, rhs: (T) -> U) -> U? {
     }
     return rhs(lhs)
 }
+
+public func | <T, U> (lhs: T?, rhs: (T) -> U?) -> U? {
+    guard let lhs else {
+        return nil
+    }
+    return rhs(lhs)
+}
